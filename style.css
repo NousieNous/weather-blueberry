@@ -13,6 +13,24 @@ body {
   border-radius: 5px;
 }
 
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 17px;
+  color: rgb(94, 39, 87);
+}
+
+.weather-forecast-temperature {
+  font-size: 12px;
+}
+
+.min-temp {
+  color: rgb(161, 159, 159);
+}
+
 h1 {
   color: rgb(102, 171, 135);
   font-size: 24px;
