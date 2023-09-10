@@ -66,3 +66,7 @@ li:first-letter {
   background-color: rgb(176, 81, 163);
   border-color: #f9fcfc;
 }
+
+small {
+  text-align: center;
+}
