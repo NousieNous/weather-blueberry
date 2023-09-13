@@ -51,6 +51,13 @@ function displayForecast() {
   console.log(forecastHTML);
 }
 
+function getForecast(response) {
+  let apiKey = "4ce3a02f64e0o54ccd87210b1td013aa";
+  let apiUrl =
+    "https://api.shecodes.io/weather/v1/forecast?query={London}&key={4ce3a02f64e0o54ccd87210b1td013aa}";
+  console.log(apiUrl);
+}
+
 function displayTemperature(response) {
   console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
@@ -70,6 +77,8 @@ function displayTemperature(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response);
 }
 
 function search(city) {
