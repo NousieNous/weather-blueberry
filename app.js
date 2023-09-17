@@ -33,10 +33,9 @@ function displayForecast(response) {
         forecastHTML +
         `
       <div class="col-2">
-        <div class="weather-forecast-date">${formatDate(
+        <div class="weather-forecast-date">${formatDay(
           forecastDay.time * 1000
         )}</div>
-        ${index}
         <img
           src="${forecastDay.condition.icon_url}"
           alt=""
@@ -57,12 +56,11 @@ function displayForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
 }
 
-function getForecast(response) {
+function getForecast(coordinates) {
   let apiKey = "4ce3a02f64e0o54ccd87210b1td013aa";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=London&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&key=${apiKey}`;
   console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
@@ -87,7 +85,7 @@ function displayTemperature(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
-  getForecast(response);
+  getForecast(response.data.coord);
 }
 
 function search(city) {
