@@ -25,10 +25,11 @@ body {
 
 .weather-forecast-temperature {
   font-size: 12px;
+  color: #1e8886;
 }
 
 .min-temp {
-  color: rgb(161, 159, 159);
+  opacity: 0.5;
 }
 
 h1 {
